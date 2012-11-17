@@ -1,0 +1,41 @@
+{% extends 'EventBundle::layout.html.twig' %}
+
+{% block body %}
+    <section class="event-show event-edit">
+        <header id="menu">
+            <a class="link" href="{{ path('event') }}">&larr; back to the event list</a>
+        </header>
+
+        <article>
+            {#<header class="map-container">#}
+                {#<img src="http://maps.googleapis.com/maps/api/staticmap?center=Somewhere,%20US&zoom=15&size=300x300&maptype=roadmap&sensor=false" />#}
+            {#</header>#}
+            <section>
+                <form action="{{ path('event_create') }}" method="post" {{ form_enctype(form) }}>
+                    <h1>
+                      New post!
+                    </h1>
+
+                    <dl>
+                        <dd>
+                        <dt>Name:  {{ form_widget(form.name) }}</dt>
+                        <dd>
+
+                        <dd>
+                        <dt>Message:  {{ form_widget(form.textbox) }}</dt>
+                        </dd>
+
+                        <dd>
+                        <dt> {{ form_widget(form.time) }}</dt>
+                        </dd>
+                    </dl>
+
+                    {{ form_widget(form) }}
+
+                    <button type="submit" class="button">Save</button>
+
+                </form>
+            </section>
+        </article>
+    </section>
+{% endblock %}
