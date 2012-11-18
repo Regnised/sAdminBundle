@@ -2,13 +2,7 @@
 
 
 {% block bootstrap %}
-    <!-- Le styles -->
     <link href="../public/css/bootstrap.css" rel="stylesheet">
-    <style>
-        body {
-            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-        }
-    </style>
     <link href="../public/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -36,17 +30,12 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                     <br><br>
-                    <p>
-
-                        <section class="event-show event-edit">
-                            <header id="menu">
-                                {#<a class="link" href="{{ path('event') }}">&larr; back to the event list</a>#}
-                            </header>
 
                             <article>
                                 <section>
                                     <form action="{{ path('event_create') }}" method="post" {{ form_enctype(form) }}>
-                                        {{ form_row(form.name) }}{{ form_row(form.textbox) }}
+                                        {{ form_row(form.name) }}
+                                        {{ form_row(form.textbox) }}
                                         {#{{ form_row(form.time) }}#}
 
                                         <p>
@@ -110,25 +99,14 @@
 
 
 
-    ----------------------bootstrap footer
+
     <div class="navbar navbar-inverse navbar-fixed-bottom">
         <div class="navbar-inner">
             <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <a class="brand" href="#">Guest book all rights reserved.</a>
+                <a class="brand" href="#">Guestbook all rights reserved.</a>
                 <div class="nav-collapse collapse">
-                    <ul class="nav">
-                        {#<li class="active"><a href="#">Home</a></li>#}
-                        {#<li><a href="#about">About</a></li>#}
-                        {#<li><a href="#contact">Contact</a></li>#}
-                    </ul>
-                </div><!--/.nav-collapse -->
+                </div>
             </div>
         </div>
     </div>
-    ----------------------
 {% endblock %}
