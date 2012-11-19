@@ -12,7 +12,7 @@ class EventType extends AbstractType
     {
         $builder
             ->add('name', 'text')
-            ->add('time', 'date')
+            ->add('time', 'datetime')
             ->add('textbox', 'textarea')
         ;
     }

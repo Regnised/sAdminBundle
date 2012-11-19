@@ -10,10 +10,12 @@
         <div class="navbar-inner">
             <div class="container">
                 <a class="brand" href="#">Guest book</a>
-                <p>
+                <br>
+                <div class="pagination-centered">
+                    <p>
                     {{ pagerfanta(entities, 'twitter_bootstrap') }}
-                </p>
-
+                    </p>
+                </div>
                     <form action="{{ path('gbook_homepage') }}" method="post" {{ form_enctype(form) }} class="well">
                         {{ form_errors(form) }}
 
@@ -27,17 +29,17 @@
             </div>
         </div>
     </div>
-<div>
+
     {% for entity in entities.currentPageResults %}
         Author: {{ entity.name }} <br>
-        Message: {{ entity.textbox [0:99] }}<br>
+        Message: {{ entity.textbox [0:99] }}<br><br>
        {# <a href="{{ path('gbook_show', {'id': entity.id}) }}">Show</a><br>
         <a href="{{ path('gbook_delete', {'id': entity.id}) }}">Delete</a><hr>#}
     {% endfor %}
-</div>
-    <div class="navbar navbar-inverse navbar-fixed-bottom">
+    <br><br>
+    <div class="navbar navbar-inverse navbar-fixed-bottom2">
         <div class="navbar-inner">
-            <div class="container">
+            <div class="container pagination-centered">
                 {{ pagerfanta(entities, 'twitter_bootstrap') }}
                 <div class="nav-collapse collapse">
                 </div>

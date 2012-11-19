@@ -33,7 +33,7 @@ class EventController extends Controller
 
         $adapter = new ArrayAdapter(array_reverse($entities));
         $pagerfanta = new Pagerfanta($adapter);
-        $pagerfanta->setMaxPerPage(5);
+        $pagerfanta->setMaxPerPage(10);
         $pagerfanta->setCurrentPage($page);
 
         return $this->render('EventBundle:Event:index.html.twig', array(

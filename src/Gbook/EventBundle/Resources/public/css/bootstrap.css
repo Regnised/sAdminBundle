@@ -153,7 +153,7 @@ textarea {
 .input-block-level {
   display: block;
   width: 100%;
-  min-height: 30px;
+  min-height: 20px;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -164,9 +164,10 @@ body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 30px;
   color: #333333;
   background-color: #ffffff;
+
 }
 
 a {
@@ -226,7 +227,7 @@ a:hover {
 .container,
 .navbar-static-top .container,
 .navbar-fixed-top .container,
-.navbar-fixed-bottom .container {
+.navbar-fixed-bottom2 .container {
   width: 940px;
 }
 
@@ -346,7 +347,7 @@ a:hover {
   display: block;
   float: left;
   width: 100%;
-  min-height: 30px;
+  min-height: 20px;
   margin-left: 2.127659574468085%;
   *margin-left: 2.074468085106383%;
   -webkit-box-sizing: border-box;
@@ -594,7 +595,7 @@ p {
   margin-bottom: 20px;
   font-size: 21px;
   font-weight: 200;
-  line-height: 30px;
+  line-height: 20px;
 }
 
 small {
@@ -1086,17 +1087,17 @@ input[type="checkbox"] {
 
 select,
 input[type="file"] {
-  height: 30px;
+  height: 20px;
   /* In IE7, the height of the select element cannot be changed by height, only font-size */
 
   *margin-top: 4px;
   /* For IE7, add top margin to align select with labels */
 
-  line-height: 30px;
+  line-height: 20px;
 }
 
 select {
-  width: 220px;
+  /*width: 220px;*/
   background-color: #ffffff;
   border: 1px solid #cccccc;
 }
@@ -2876,14 +2877,14 @@ table th[class*="span"],
 }
 
 .dropup .caret,
-.navbar-fixed-bottom .dropdown .caret {
+.navbar-fixed-bottom2 .dropdown .caret {
   border-top: 0;
   border-bottom: 4px solid #000000;
-  content: "";
+  content: "dsad";
 }
 
 .dropup .dropdown-menu,
-.navbar-fixed-bottom .dropdown .dropdown-menu {
+.navbar-fixed-bottom2 .dropdown .dropdown-menu {
   top: auto;
   bottom: 100%;
   margin-bottom: 1px;
@@ -4170,14 +4171,14 @@ input[type="submit"].btn.btn-mini {
 .navbar {
   *position: relative;
   *z-index: 2;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   overflow: visible;
   color: #777777;
 }
 
 .navbar-inner {
 
-  min-height: 30px;
+  min-height: 20px;
   padding-right: 10px;
   padding-left: 10px;
   background-color: #fafafa;
@@ -4349,7 +4350,13 @@ input[type="submit"].btn.btn-mini {
   z-index: 1030;
   margin-bottom: 0;
 }
-
+.navbar-fixed-bottom2 {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    margin-bottom: 0;
+}
 .navbar-fixed-top .navbar-inner,
 .navbar-static-top .navbar-inner {
   border-width: 0 0 1px;
@@ -4360,7 +4367,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar-fixed-top .navbar-inner,
-.navbar-fixed-bottom .navbar-inner {
+.navbar-fixed-bottom2 .navbar-inner {
   padding-right: 0;
   padding-left: 0;
   -webkit-border-radius: 0;
@@ -4370,7 +4377,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar-static-top .container,
 .navbar-fixed-top .container,
-.navbar-fixed-bottom .container {
+.navbar-fixed-bottom2 .container {
   width: 940px;
 }
 
@@ -4385,11 +4392,12 @@ input[type="submit"].btn.btn-mini {
           box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-fixed-bottom {
+.navbar-fixed-bottom2 {
   bottom: 0;
 }
 
-.navbar-fixed-bottom .navbar-inner {
+
+.navbar-fixed-bottom2 .navbar-inner {
   -webkit-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
      -moz-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
@@ -4522,7 +4530,7 @@ input[type="submit"].btn.btn-mini {
   content: '';
 }
 
-.navbar-fixed-bottom .nav > li > .dropdown-menu:before {
+.navbar-fixed-bottom2 .nav > li > .dropdown-menu:before {
   top: auto;
   bottom: -7px;
   border-top: 7px solid #ccc;
@@ -4530,7 +4538,7 @@ input[type="submit"].btn.btn-mini {
   border-top-color: rgba(0, 0, 0, 0.2);
 }
 
-.navbar-fixed-bottom .nav > li > .dropdown-menu:after {
+.navbar-fixed-bottom2 .nav > li > .dropdown-menu:after {
   top: auto;
   bottom: -6px;
   border-top: 6px solid #ffffff;
@@ -4755,6 +4763,9 @@ input[type="submit"].btn.btn-mini {
 
 .pagination {
   margin: 5px 0;
+  position: fixed;
+  left: 50%;
+}
 }
 
 .pagination ul {
@@ -4777,7 +4788,6 @@ input[type="submit"].btn.btn-mini {
 
 .pagination ul > li > a,
 .pagination ul > li > span {
-  float: left;
   padding: 2px 6px;
   line-height: 20px;
   text-decoration: none;
