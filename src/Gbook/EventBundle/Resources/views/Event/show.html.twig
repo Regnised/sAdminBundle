@@ -1,5 +1,18 @@
 {% extends 'EventBundle::layout.html.twig' %}
 
+{% block title %} GBook | Show {% endblock %}
+
+{% block body %}
+    {{ entity.name }}<br>
+    {{ entity.time }}<br>
+    {{ entity.textbox }}<br>
+{% endblock %}
+
+
+
+{#
+{% extends 'EventBundle::layout.html.twig' %}
+
 {% block body %}
 
     <section class="event-show">
@@ -8,9 +21,9 @@
         </header>
 
         <article>
-            {#<header class="map-container">#}
-                {#<img src="http://maps.googleapis.com/maps/api/staticmap?center={{ entity.location | url_encode }}&markers=color:red%7Ccolor:red%7C{{ entity.location | url_encode }}&zoom=14&size=300x300&maptype=roadmap&sensor=false" />#}
-            {#</header>#}
+            &#123;&#35;<header class="map-container">&#35;&#125;
+                &#123;&#35;<img src="http://maps.googleapis.com/maps/api/staticmap?center={{ entity.location | url_encode }}&markers=color:red%7Ccolor:red%7C{{ entity.location | url_encode }}&zoom=14&size=300x300&maptype=roadmap&sensor=false" />&#35;&#125;
+            &#123;&#35;</header>&#35;&#125;
             <section>
                 <h1>
                     {{ entity.name }}
@@ -29,3 +42,4 @@
         </article>
     </section>
 {% endblock %}
+#}

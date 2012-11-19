@@ -1,7 +1,11 @@
-event_homepage:
-    pattern:  /
-    defaults: { _controller: EventBundle:Default:index }
+gbook_homepage:
+    pattern:  /{page}
+    defaults: { _controller: EventBundle:Event:index, page: 1 }
 
-EventBundle_event:
-    resource: "@EventBundle/Resources/config/routing/event.yml"
-    prefix:   /event
+gbook_show:
+    pattern: /show/{id}
+    defaults: { _controller: EventBundle:Event:show }
+
+gbook_delete:
+    pattern: /delete/{id}
+    defaults: { _controller: EventBundle:Event:delete }
