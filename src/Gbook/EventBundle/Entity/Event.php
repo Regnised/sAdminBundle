@@ -3,6 +3,8 @@
 namespace Gbook\EventBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Validation;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Event
@@ -23,6 +25,8 @@ class Event
 
     /**
      * @var string
+     * @Assert\Length(min = 3)
+     * @Assert\NotBlank
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
@@ -30,14 +34,16 @@ class Event
 
     /**
      * @var string
-     *
+     * @Assert\Email
+     * @Assert\NotBlank
      * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;
 
     /**
      * @var string
-     *
+     * @Assert\Length(min = 100)
+     * @Assert\NotBlank
      * @ORM\Column(name="textbox", type="string", length=1000)
      */
     private $textbox;
