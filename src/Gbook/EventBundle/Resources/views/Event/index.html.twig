@@ -19,7 +19,6 @@
 
             </div>
         </div>
-    </div>
     <form action="{{ path('gbook_homepage') }}" method="post" {{ form_enctype(form) }} class="well">
         {{ form_errors(form) }}
 
@@ -30,6 +29,8 @@
         {{ form_rest(form) }}
         <input type="submit" value="Отправить" class="btn"/>
     </form>
+    </div>
+
     {% for entity in entities.currentPageResults %}
         Author: {{ entity.name }} <br>
 
@@ -48,8 +49,6 @@
         <div class="navbar-inner">
             <div class="container pagination-centered">
                 {{ pagerfanta(entities, 'twitter_bootstrap') }}
-                <div class="nav-collapse collapse">
-                </div>
             </div>
         </div>
     </div>

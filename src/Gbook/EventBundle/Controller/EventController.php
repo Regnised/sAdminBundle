@@ -30,6 +30,7 @@ class EventController extends Controller
 
         $repository = $em->getRepository('EventBundle:Event');
         $entities = $repository->findAll();
+        //from config file get variable
         $myVariable = $this->container->getParameter('myVariable');
 
         $adapter = new ArrayAdapter(array_reverse($entities));
