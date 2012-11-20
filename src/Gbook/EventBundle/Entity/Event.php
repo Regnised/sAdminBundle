@@ -5,7 +5,7 @@ namespace Gbook\EventBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Gbook\EventBundle\Entity\Event
+ * Event
  *
  * @ORM\Table(name="gbook_event")
  * @ORM\Entity(repositoryClass="Gbook\EventBundle\Entity\EventRepository")
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Event
 {
     /**
-     * @var integer $id
+     * @var integer
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -22,23 +22,23 @@ class Event
     private $id;
 
     /**
-     * @var string $name
+     * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
 
     /**
-     * @var \DateTime $time
+     * @var string
      *
-     * @ORM\Column(name="time", type="datetime")
+     * @ORM\Column(name="email", type="string", length=255)
      */
-    private $time;
+    private $email;
 
     /**
-     * @var string $textbox
+     * @var string
      *
-     * @ORM\Column(name="textbox", type="string", length=255)
+     * @ORM\Column(name="textbox", type="string", length=1000)
      */
     private $textbox;
 
@@ -77,26 +77,26 @@ class Event
     }
 
     /**
-     * Set time
+     * Set email
      *
-     * @param \DateTime $time
+     * @param string $email
      * @return Event
      */
-    public function setTime($time)
+    public function setEmail($email)
     {
-        $this->time = $time;
+        $this->email = $email;
     
         return $this;
     }
 
     /**
-     * Get time
+     * Get email
      *
-     * @return \DateTime 
+     * @return string 
      */
-    public function getTime()
+    public function getEmail()
     {
-        return $this->time;
+        return $this->email;
     }
 
     /**
