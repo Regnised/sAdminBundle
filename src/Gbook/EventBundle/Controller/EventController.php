@@ -51,7 +51,7 @@ class EventController extends Controller
 
 
         return $this->render('EventBundle:Event:show.html.twig', array(
-                'post' => $post,
+                'entity' => $post,
             ));
     }
 

@@ -12,31 +12,38 @@
                 <a class="brand" href="#">Guest book</a>
                 <br>
                 <div class="pagination-centered">
-                    <p>
+
                     {{ pagerfanta(entities, 'twitter_bootstrap') }}
-                    </p>
+
                 </div>
-                    <form action="{{ path('gbook_homepage') }}" method="post" {{ form_enctype(form) }} class="well">
-                        {{ form_errors(form) }}
 
-                        {{ form_row(form.name) }}
-                        {{ form_row(form.email) }}
-                        {{ form_row(form.textbox) }}
-
-                        {{ form_rest(form) }}
-                        <input type="submit" value="Отправить" class="btn"/>
-                    </form>
             </div>
         </div>
     </div>
+    <form action="{{ path('gbook_homepage') }}" method="post" {{ form_enctype(form) }} class="well">
+        {{ form_errors(form) }}
 
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.textbox) }}
+
+        {{ form_rest(form) }}
+        <input type="submit" value="Отправить" class="btn"/>
+    </form>
     {% for entity in entities.currentPageResults %}
         Author: {{ entity.name }} <br>
-        Message: {{ entity.textbox [0:99] }}<br><br>
-       {# <a href="{{ path('gbook_show', {'id': entity.id}) }}">Show</a><br>
-        <a href="{{ path('gbook_delete', {'id': entity.id}) }}">Delete</a><hr>#}
+
+        {% if entity.textbox|length > 100 %}
+            <td width="8%">{{entity.textbox|slice(0, 100)}}...</td>
+        {% else %}
+            <td width="8%">{{entity.textbox}}</td>
+        {% endif %}
+
+        {#Message: {{  [0:99] }}#}
+       <a href="{{ path('gbook_show', {'id': entity.id}) }}">Просмотреть</a><br>
+       <a href="{{ path('gbook_delete', {'id': entity.id}) }}">Удалить</a><hr>
     {% endfor %}
-    <br><br>
+    
     <div class="navbar navbar-inverse navbar-fixed-bottom2">
         <div class="navbar-inner">
             <div class="container pagination-centered">
