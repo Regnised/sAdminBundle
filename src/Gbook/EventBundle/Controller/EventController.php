@@ -30,10 +30,11 @@ class EventController extends Controller
 
         $repository = $em->getRepository('EventBundle:Event');
         $entities = $repository->findAll();
+        $myVariable = $this->container->getParameter('myVariable');
 
         $adapter = new ArrayAdapter(array_reverse($entities));
         $pagerfanta = new Pagerfanta($adapter);
-        $pagerfanta->setMaxPerPage(10);
+        $pagerfanta->setMaxPerPage($myVariable);
         $pagerfanta->setCurrentPage($page);
 
         return $this->render('EventBundle:Event:index.html.twig', array(
