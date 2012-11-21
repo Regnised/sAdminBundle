@@ -40,7 +40,6 @@
             <td width="8%">{{entity.textbox}}</td>
         {% endif %}
 
-        {#Message: {{  [0:99] }}#}
        <a href="{{ path('gbook_show', {'id': entity.id}) }}">Просмотреть</a><br>
        <a href="{{ path('gbook_delete', {'id': entity.id}) }}">Удалить</a><hr>
     {% endfor %}
