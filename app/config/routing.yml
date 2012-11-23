@@ -2,9 +2,9 @@ event:
     resource: "@EventBundle/Resources/config/routing.yml"
     prefix:   /
 
-user_routes:
-    resource: "@UserBundle/Controller"
-    type: annotation
+_user_bundle:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix: /fos
 # Internal routing configuration to handle ESI
 #_internal:
 #    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"

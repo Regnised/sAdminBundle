@@ -1,6 +1,5 @@
 <?php
-// src/Acme/TaskBundle/Entity/Task.php
-namespace Acme\TaskBundle\Entity;
+namespace Gbook\TaskBundle\Entity;
 
 class Task
 {

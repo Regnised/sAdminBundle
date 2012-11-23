@@ -1,6 +1,4 @@
 <?php
-// src/Acme/UserBundle/Entity/User.php
-
 namespace Gbook\UserBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
