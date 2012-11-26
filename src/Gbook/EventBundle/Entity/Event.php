@@ -25,7 +25,7 @@ class Event
 
     /**
      * @var string
-     * @Assert\Length(min = 3)
+     * @Assert\Length(min = 3, max = 25)
      * @Assert\NotBlank
      *
      * @ORM\Column(name="name", type="string", length=255)
@@ -42,7 +42,7 @@ class Event
 
     /**
      * @var string
-     * @Assert\Length(min = 100)
+     * @Assert\Length(min = 100, max = 1000)
      * @Assert\NotBlank
      * @ORM\Column(name="textbox", type="string", length=1000)
      */
