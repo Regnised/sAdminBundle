@@ -27,7 +27,10 @@ class Event
      * @var string
      * @Assert\Length(min = 3, max = 25)
      * @Assert\NotBlank
-     *
+     * @Assert\Regex(
+     *     pattern="[a-zA-Zа-яА-Я]",
+     *     message="Your name must contain Latin characters only"
+     * )
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;

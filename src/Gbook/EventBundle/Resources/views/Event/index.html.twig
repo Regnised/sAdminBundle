@@ -1,20 +1,14 @@
 {% extends 'EventBundle::layout.html.twig' %}
 
-{% block bootstrap %}
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-{% endblock %}
+
 
 {% block body %}
 
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
-                <a class="brand" href="#">Guest book</a>
-                <br>
                 <div class="pagination-centered">
-
                     {{ pagerfanta(entities, 'twitter_bootstrap') }}
-
                 </div>
 
             </div>

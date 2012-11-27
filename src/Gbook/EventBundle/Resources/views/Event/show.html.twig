@@ -1,9 +1,12 @@
 {% extends 'EventBundle::layout.html.twig' %}
-
 {% block body %}
-    {{ entity.name }}<br>
-    {{ entity.email }}<br>
-    {{ entity.textbox }}<br>
+    <div class="container navbar-fixed-top navbar-text navbar-inner text-show">
+        {{ entity.name }}<br>
+        {{ entity.email }}<br>
+        {{ entity.textbox }}<br>
+        <a href="{{ path('gbook_homepage') }}">Назад</a><br>
+    </div>
+
 {% endblock %}
 
 
