@@ -25,11 +25,12 @@ class Event
 
     /**
      * @var string
-     * @Assert\Length(min = 3, max = 25)
+     * @Assert\Length(min = 3, max = 225)
      * @Assert\NotBlank
      * @Assert\Regex(
-     *     pattern="[a-zA-Zа-яА-Я]",
-     *     message="Your name must contain Latin characters only"
+     *     pattern="/\d/",
+     *     match=false,
+     *     message="Your name cannot contain a number"
      * )
      * @ORM\Column(name="name", type="string", length=255)
      */

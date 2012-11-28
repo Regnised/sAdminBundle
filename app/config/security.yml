@@ -22,13 +22,14 @@ security:
                 login_path: fos_user_security_login
                 provider: fos_userbundle
             logout:
-                path:   /fos/logout
+                path:   fos_user_security_logout
                 target: /
             anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
 
     access_control:
-        - { path: ^/delete, roles: ROLE_USER }
+        - { path: ^/fos/login$,   role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/fos/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
         #- { path: ^/_internal/secure, roles: IS_AUTHENTICATED_ANONYMOUSLY, ip: 127.0.0.1 }

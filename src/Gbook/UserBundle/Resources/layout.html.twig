@@ -1,5 +1,7 @@
 {% extends '::base.html.twig' %}
-
+{% stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
+{% endstylesheets %}
 {% block body %}
     {{ block('fos_user_content') }}
 {% endblock %}

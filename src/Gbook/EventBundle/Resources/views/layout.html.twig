@@ -1,19 +1,12 @@
 {% extends '::base.html.twig' %}
 
 {% block title 'Welcome to Guestbook!' %}
-{% block bootstrap %} {% endblock %}
-
 
 {% block stylesheets %}
-
-    {% stylesheets
-    'bundles/event/css/*'
-    filter='cssrewrite'
-    %}
-    <link rel="stylesheet" href="{{ asset_url }}" />
-    {% endstylesheets %}
-
-    {% block footer %} {% endblock %}
-
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
 {% endblock %}
+
+{% block footer %}{% endblock %}
+
+
 
