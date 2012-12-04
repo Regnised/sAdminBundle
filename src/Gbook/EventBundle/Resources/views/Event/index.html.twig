@@ -5,7 +5,7 @@
         <div class="navbar-inner">
             <div class="container">
 
-                <div style="padding-top: 20px;" class="nav pull-right">
+                <div style="padding-top: 15px;" class="nav pull-right">
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         {{ app.user.username }}
                         <a href="{{ path('fos_user_security_logout') }}">Logout</a>
@@ -15,8 +15,11 @@
                     {% endif %}
                 </div>
 
-                <div class="pagination-centered">
-                    {{ pagerfanta(entities, 'twitter_bootstrap') }}
+                <div class="pagination-centered pagerfanta">
+
+                    {{pagerfanta(entities,'twitter_bootstrap', { 'proximity': 1}) }}
+                    {#{{ pagerfanta(entities, 'default', pagerfanta_opts) }}#}
+
                 </div>
             </div>
         </div>
@@ -31,7 +34,7 @@
         <input type="submit" value="Отправить" class="btn"/>
     </form>
     </div>
-
+    <div class="layer">
     {% for entity in entities.currentPageResults %}
         Author: {{ entity.name }} <br>
 
@@ -47,6 +50,7 @@
         {% endif %}
         <hr>
     {% endfor %}
+    </div>
 
     <div class="navbar navbar-inverse navbar-fixed-bottom2">
         <div class="navbar-inner">

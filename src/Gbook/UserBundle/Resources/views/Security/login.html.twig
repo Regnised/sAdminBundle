@@ -1,6 +1,6 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
+{% extends "EventBundle::layout.html.twig" %}
 
-{% block fos_user_content %}
+{% block footer %}
     {% if error %}
         <div>{{ error }}</div>
     {% endif %}
@@ -22,4 +22,4 @@
 
             <input class="btn btn-primary" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
         </form>
-{% endblock fos_user_content %}
+{% endblock footer %}

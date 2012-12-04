@@ -1,0 +1,9 @@
+/*For pagerfanta*/
+
+.layer {
+    overflow: scroll; /* Добавляем полосы прокрутки */
+    width: 1000px; /* Ширина блока */
+    height: 220px; /* Высота блока */
+    padding: 5px; /* Поля вокруг текста */
+    border: solid 1px black; /* Параметры рамки */
+}
